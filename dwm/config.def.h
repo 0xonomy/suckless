@@ -9,7 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrainsMono:size=10" };
 static const char dmenufont[]       = "JetBrainsMono:size=10";
 
-#include "./themes/ocean.h"
+#include "./themes/tokyo-night.h"
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -69,8 +69,6 @@ static const char *dmenucmd[] = { "dmenu_run", "-c" , "-l", "20", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const char *ss[] = {"scrnshoot", NULL};
-static const char *volup[] = {"amixer", "-D", "pulse", "sset", "Master", "5%+", NULL};
-static const char *voldown[] = {"amixer", "-D", "pulse", "sset", "Master", "5%-", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -113,8 +111,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ 0,				XK_Print,  spawn,          {.v = ss} },
-	{ MODKEY|ShiftMask,		XK_a,	   spawn,	   {.v = volup } },
-	{ MODKEY|ShiftMask,		XK_z,	   spawn,	   {.v = voldown } },
 };
 
 /* button definitions */
